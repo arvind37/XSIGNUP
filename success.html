@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Success</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="thanks-for-sub">
+    <div class="success-card">
+      <img src="icon-success.svg" alt="success" />
+
+      <h2>Thanks for subscribing!</h2>
+
+      <p class="success-text">
+        A confirmation email has been sent to
+        <strong></strong>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+
+      <button class="dismiss-btn">Dismiss message</button>
+    </div>
+  </section>
+    <footer class="footer">
+    Challenge by <a href="https://crio.do" target="_blank">Crio</a>.
+    <a href="https://github.com/arvind37">Arvind Kumawat</a>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+
+    document.querySelector(".success-text strong").textContent = email;
+
+    document.querySelector(".dismiss-btn").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>
